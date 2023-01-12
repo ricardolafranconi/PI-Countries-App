@@ -83,7 +83,7 @@ transition: 0.8s ease;
 }
 
 .cAct {
-    background-color: rgba(70, 70, 70, 0.582);
+    background-color: rgba(255, 36, 36, 0.582);;
     border-radius: 2.5px;
     border-width: 3px;
     position: relative;
@@ -92,7 +92,7 @@ transition: 0.8s ease;
     margin-left: 5px; 
     margin-top: 40px;
     margin-bottom: 40px;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: "Carnevalee Freakshow";
     cursor: pointer;
     flex-direction: row;
