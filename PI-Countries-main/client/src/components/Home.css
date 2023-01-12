@@ -14,15 +14,16 @@
 }
 
 .home-background{
+    float:left;
     background-image: url("./oldWorldMap.jpg"); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;    
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; 
+    flex-direction: column;  */
     
 }
 
@@ -89,27 +90,29 @@ transition: 0.8s ease;
     color: rgb(252, 245, 245);
     border-color: white;  
     margin-left: 5px; 
-    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 2rem;
     font-family: "Carnevalee Freakshow";
     cursor: pointer;
     flex-direction: row;
 }
 
 .container-filters {
-    width: 10%; /* adjust as needed */
-   
+    width: 15%; /* adjust as needed */
+    float:left;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     background-color: rgba(70, 70, 70, 0.582);
     color: white;
     border-color: white;
     border-radius: 2.5px;
     border-width: 2.5px;     
-    margin-left: auto;
+    margin-left: 70px;
     margin-right:auto;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-family: "Carnevalee Freakshow";
     cursor: pointer; 
 }
@@ -117,8 +120,10 @@ transition: 0.8s ease;
 .cards{
     position: relative;    
     border-radius: 10px;
-    padding: 0% 8%;
+    padding: 0% 10%;
     margin: 10px;
+    width: auto;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     align-content: center;

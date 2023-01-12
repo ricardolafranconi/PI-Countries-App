@@ -31,6 +31,7 @@ s.container{
     flex-direction: row;
 }
 .detail {
+    float:left;
     color: rgb(17, 16, 16);
     width: 100%;
     max-height: 5000px;
@@ -41,8 +42,7 @@ s.container{
 }
 
 .info{
-    column-count: 3;
-    display: flex;
+    float:left;
     flex-direction: column;
     justify-content: center;
     width: 100%;
@@ -61,19 +61,16 @@ s.container{
     font-weight: 300;
     margin: auto;
     font-family: 'Carnevalee Freakshow', cursive;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     align-self: auto;
     justify-content: center;
 }
 
 .div1 {
-    display: flex;
-    justify-content: center;
-    align-items: justify;
-    padding: 2%;
-    border-radius: 20px;
+    float:left;
+    width:33.33%;
 }
 
 .div2 {
@@ -109,12 +106,14 @@ s.container{
 }
 
 .data1 {
+    float:left;
     font-family: 'Carnevalee Freakshow', cursive;
     color: rgb(255, 255, 255);
     font-weight: 200;
     font-size: 2rem;
     font-stretch: normal;
     text-decoration: none;
+    margin: 0%;
     width: 100%;    
     flex-direction: row;
     flex-wrap: wrap;

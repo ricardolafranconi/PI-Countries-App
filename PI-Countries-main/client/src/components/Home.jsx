@@ -107,10 +107,10 @@ const Home = () => {
                     </select>
 
                    
-                        <Link to="/activities"> <button className='cAct'>Create activity!</button> </Link>
                    
                         <button className ="container-filters" onClick = {handleClick}>RESET</button>
            
+                        <Link to="/activities"> <button className='cAct'>Create activity!</button> </Link>
                     <div className = "cards">
                  {
                    currentCountries && currentCountries.map(country => {
