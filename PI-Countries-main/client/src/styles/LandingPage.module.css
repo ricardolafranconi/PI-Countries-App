@@ -1,0 +1,71 @@
+
+.landing-page{
+    background-image: url("./2097771.jpg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+.landPage-title {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red); 
+    background-clip: text;
+    color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 80px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+
+
+ 
+  
+  /* CSS */
+  .btn-landPage {
+    background-color: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 30px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .btn-landPage {
+    background-color: #fff;
+  }
+  
+  .btn-landPage {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+  }
+  
+  @media (min-width: 768px) {
+    .btn-landPage {
+      min-width: 120px;
+      padding: 0 25px;
+    }
+  }

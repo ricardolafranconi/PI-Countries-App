@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'Carnevalee Freakshow';
+    src: url( './Carnevalee Freakshow.ttf');
+
+}
+
+.title {
+    font-family: 'Carnevalee Freakshow';
+    color: #290505;
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: 350;
+    ;
+}
+
+.form {
+    background-image: url("./oldWorldMap.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.display {
+    font-family: 'Carnevalee Freakshow';
+    display: block;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+
+
+.formulario {
+    background-image: url("./homeBackVintage.jpg");
+    font-family: 'Carnevalee Freakshow';
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    margin: 15px;
+    margin-right: 500px;
+    margin-left: 500px;
+    padding: 28px;
+    padding-bottom: 30px;
+    border: 1px solid white;
+    border-radius: 15px;
+    background-color: rgba(69, 69, 69, 0.7);
+    font-size: 30px;
+}
+
+.country-added {
+    font-family: 'Carnevalee Freakshow';
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    margin: 15px;
+    margin-right: 500px;
+    margin-left: 500px;
+    padding: 28px;
+    padding-bottom: 30px;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: 6px 7px 8px -6px rgba(69, 69, 69, 0.7);
+    background-color: rgba(69, 69, 69, 0.7);
+}
+
+body {
+    font-family: 'Carnevalee Freakshow';
+    text-align: center;
+}
+
+
+.volver button {
+    font-family: 'Carnevalee Freakshow';
+    background-color: rgba(255, 36, 36, 0.582);
+    border-radius: 2.5px;
+    border-color: white;
+    border-width: 3px;
+    font-size: 30px;
+    padding: 10px 25px;
+    color: white;
+    position: relative;
+    text-align: center;
+    top: auto;
+}
+
+.submit {
+    font-family: 'Carnevalee Freakshow';
+    background-color: rgba(255, 36, 36, 0.582);
+    font-size: 50px;
+    border-radius: 2.5px;
+    border-color: white;
+    border-width: 3px;
+    padding: 10px;
+    color: white;
+    position: relative;
+    text-align: center;
+    top: 10px;
+}

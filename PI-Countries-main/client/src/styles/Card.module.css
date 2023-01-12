@@ -1,0 +1,102 @@
+.home-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    font-family: "VintageFont", Times New Roman; /* use a vintage font */
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(70, 70, 70, 0.582);
+    background-image: url('card-background.jpg'); /* add a vintage-looking background image */
+    border: 3px dotted #ccc; /* add a dotted border */
+    box-shadow: 2px 2px 3px #999; /* add a drop shadow */
+  }
+  
+  .card-image {
+    width: 150px;
+    height: 60px;
+    margin: auto;
+    display: table-row-group;
+    flex-direction: row;
+    border-radius: 10px;
+  }
+  
+  .card-name {
+    text-align: center;
+    font-size: 1rem;
+    margin: 6px;
+    font-family: "VintageFont", Times New Roman; /* use a vintage font */
+  }
+  
+  .card-continent {
+    text-align: center;
+    font-size: 1rem;
+    margin: 6px;
+    font-family: "VintageFont", Times New Roman; /* use a vintage font */
+  }
+  
+  .card-btn {
+    background: white;
+    border: measurement solid black;
+    cursor: pointer;
+    font: 2000 1rem 'VintageFont', Times New Roman; /* use a vintage font */
+    letter-spacing: measurement;
+    margin: 0.5rem;
+    padding: 0.5em 0.75em;
+    position: relative;
+    text-transform: uppercase;
+    /* add a vintage-looking icon to the button */
+    
+  }
+  
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap');
+
+
+.home-card{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    font-family: "Montserrat";
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(70, 70, 70, 0.582);
+
+}
+
+.card-image{
+    width: 150px;
+    height: 60px;
+    margin: auto;
+    display: table-row-group;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+.card-name {
+    text-align: center;
+    font-size: 1rem;
+    margin: 6px;
+    font-family: "Montserrat";
+}
+
+.card-continent {
+    text-align: center;
+    font-size: 1rem;
+    margin: 6px;
+    font-family: "Montserrat";
+}
+
+.card-btn {
+    background: white;
+    border: measurement solid black;
+    cursor: pointer;
+    font: 2000 1rem 'Montserrat';
+    letter-spacing: measurement;
+    margin: 0.5rem;
+    padding: 0.5em 0.75em;
+    position: relative;
+    text-transform: uppercase;
+} */
