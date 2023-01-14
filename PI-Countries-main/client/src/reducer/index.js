@@ -43,7 +43,7 @@ function rootReducer(state = initialState, action) {
 
             if (action.payload === "All") {
                 return { ...state, 
-                    countries: countries2.filter((country) => country.activities?.length > 0) }
+                    countries: state.allCountries }
             } else {
                 return {
                     ...state,

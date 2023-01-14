@@ -20,6 +20,7 @@ const Home = () => {
     const [order, setOrder] = useState('')
     const [currentPage, setCurrentPage] = useState(1);
     const [countriesPerPage, setCountriesPerPage] = useState(9);
+    const [loading, setLoading] = useState(false);
     const indexOfLastCountry = currentPage * countriesPerPage;
     const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
     const currentCountries = countries.slice(indexOfFirstCountry, indexOfLastCountry);
@@ -34,73 +35,90 @@ const Home = () => {
     }, [dispatch]);
 
         function handleClick(e) {
-            e.preventDefault();
-            dispatch(getCountries());
+            e.preventDefault();                      
+            dispatch(getCountries())             
+           
           }
 
-        function handleFilterContinent(e) {
+        function handleFilterContinent (e) {
             e.preventDefault();
+            console.log(countries);
+            if((e.target.value) === 'x'){
+                dispatch(getCountries())
+            }
             dispatch(filterByContinent(e.target.value));
+            setCurrentPage(1);
             }
         
-        function handleOrderAlphabet(e) {
+        function handleOrderAlphabet (e)  {
             e.preventDefault();
+            console.log(countries);
+            if((e.target.value) === 'x'){
+                dispatch(getCountries())
+            }
             dispatch(orderByName(e.target.value))
             setCurrentPage(1);
             setOrder(`Ordered ${e.target.value}`);
             }
 
-        function handleOrderPopulation(e) {
+         function handleOrderPopulation (e) {
                 e.preventDefault();
+                console.log(countries);
+                if((e.target.value) === 'x'){
+                    dispatch(getCountries())
+                }
                 dispatch(orderByPopulation(e.target.value))
                 setCurrentPage(1);
-        setOrder(e.target.value);
+                setOrder(e.target.value);
                 }
-        function handlefilterByActivities(e) {
+        const handlefilterByActivities = (e) => {
             e.preventDefault();
+            if((e.target.value) === 'x'){
+                dispatch(getCountries())
+            }
             dispatch(filterByActivity(e.target.value))
             setCurrentPage(1);
             }
         
     return (
-                <header>
-                    <div className = 'header-order'>
+                // <header>
+                    // <div className = 'header-order'>
                     <div className = "home-background">
-                    <SearchBar/>
+                 
                     <p className = "home-title">Explore the countries of the world!</p>
             
 
-                    <select className ="container-filters" onChange={e=> handleOrderAlphabet(e)}>
+                    <select className ="container-filters" onChange={handleOrderAlphabet}>
                         <option value='x'>Order by name</option>
                         <option value='asc'>A-Z</option>
                         <option value='desc'>Z-A</option>
                     </select>
 
-                    <select className ="container-filters" onChange={e=> handleOrderPopulation(e)}>
+                    <select className ="container-filters" onChange={handleOrderPopulation}>
                         <option value="x">Order by population</option>
                         <option value="min">Lower population</option>
                         <option value="max">Higher population</option>
                     </select>
 
-                    <select className ="container-filters" onChange={e=> handleFilterContinent(e)}>
+                    <select className ="container-filters" onChange={handleFilterContinent}>
                         <option value="x">Continent</option>
                         <option value='All'>All</option>
                         <option value='Asia'>Asia</option>
                         <option value='North America'>North America</option>
                         <option value='South America'>South America</option>
                         <option value='Africa'>Africa</option>
-                        <option value='Antarctic'>Antarctic</option>
+                        <option value='Antarctica'>Antarctica</option>
                         <option value='Europe'>Europe</option>
                         <option value='Oceania'>Oceania</option>
                     </select>
 
-                    <select className ="container-filters" onChange={e => handlefilterByActivities(e)} >
-                    <option value='x' disable = "selected hidden">
+                    <select className ="container-filters" onChange={handlefilterByActivities} >
+                    {/* <option value='x' disable = "selected hidden">
                             Turistic activities
-                        </option>
-                        <option value="All" disable = "selected hidden">All</option>
-                        {activities.map((activity) => (
-                            <option key={activity.id} value={activity.name}>
+                        </option> */}
+                        <option value="All" disable = "selected hidden">Turistic Activities</option>
+                        {activities?.map((activity, index) => (
+                            <option key={index} value={activity.name}>
                                 {activity.name}
                             </option>
                         ))}
@@ -111,19 +129,24 @@ const Home = () => {
                         <button className ="container-filters" onClick = {handleClick}>RESET</button>
            
                         <Link to="/activities"> <button className='cAct'>Create activity!</button> </Link>
+
+                        <SearchBar/>        
                     <div className = "cards">
                  {
                    currentCountries && currentCountries.map(country => {
                        return ( 
                            <div className ='card'>                       
                             <Card name={country.name} flag={country.flag} continent={country.continent} id={country.id} />
-                            </div>
+                    </div>
                     )
                     }
 
                 
                     )
                     }
+                        </div>
+
+
                     <Paginated 
                         countriesPerPage={countriesPerPage}
                         allCountries={countries.length}
@@ -131,9 +154,8 @@ const Home = () => {
                     />
         
                     </div>
-                    </div>
-                     </div>
-            </header>
+                    //  </div>
+            // </header>
     )
 }
 

@@ -3,21 +3,21 @@
     src: url( './Carnevalee Freakshow.ttf');
 
 }
-
+/* 
 .header-order{
     display:flex;
     flex-direction: row;
    
-   
-   
-
-}
+} */
 
 .home-background{
     float:left;
+    /* position:relative; */
     background-image: url("./oldWorldMap.jpg"); 
     background-size: cover;
     background-repeat: no-repeat;
+    /* height: 200vh; */
+    width: 100vw; 
     background-position: center;
     position: relative;    
     /* display: flex;

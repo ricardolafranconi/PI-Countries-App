@@ -20,3 +20,35 @@ describe('Country model', () => {
     });
   });
 });
+
+
+
+
+// describe('Country model', () => {
+//   beforeAll(async () => {
+//     try {
+//       await conn.authenticate();
+//     } catch (err) {
+//       console.error('Unable to connect to the database:', err);
+//     }
+//   });
+//   describe('Validators', () => {
+//     beforeEach(() => Country.sync({ force: true }));
+//     describe('name', () => {
+//       it('should throw an error if name is null', async () => {
+//         try {
+//           await Country.create({});
+//         } catch (err) {
+//           expect(err).toBeDefined();
+//           return;
+//         }
+//         throw new Error('It should have thrown an error');
+//       });
+//       it('should work when its a valid name', async () => {
+//         await Country.create({ name: 'Argentina', flag: 'Argentina-flag.png', continent: 'South America', subregion: 'Southern Cone', capital:'Buenos Aires', area: 2780400, population: 44293293 });
+//         expect(true).toBe(true);
+//       });
+//     });
+//   });
+// });
+

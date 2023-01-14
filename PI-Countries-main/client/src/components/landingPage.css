@@ -15,8 +15,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-
+    transition: all 1s ease-in-out;
 }
 
 .landPage-title {
@@ -85,3 +84,8 @@
     transform: scale(1.2);
     transition: all 0.3s ease-in-out;
   }
+
+  .show-popup {
+    /* animation styles */
+    transform: scale(1);
+}
