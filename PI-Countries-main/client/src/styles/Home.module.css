@@ -1,82 +1,130 @@
-.header-order{
-    display: flex;
-    flex-direction: column;
-    
+@font-face {
+    font-family: 'Carnevalee Freakshow';
+    src: url( './Carnevalee Freakshow.ttf');
 
 }
+/* 
+.header-order{
+    display:flex;
+    flex-direction: row;
+   
+} */
 
-.home-background{
-    background-image: url("./homeBackground.jpg"); 
+.background{
+    float:left;
+    /* position:relative; */
+    background-image: url("./oldWorldMap.jpg"); 
     background-size: cover;
     background-repeat: no-repeat;
+    /* height: 200vh; */
+    width: 100vw; 
     background-position: center;
     position: relative;    
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column;  */
+    
 }
 
-.home-title{
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red); 
+.title{
+    
     background-clip: text;
-    color: transparent;
+    color:rgba(11, 11, 11, 0.7);
     position: relative;
     top: 0;
     left: 0;
     right: 0;
     margin: auto;
-    font-size: 80px;
-    font-weight: 700;
+    font-size: 100px;
+    font-weight: 350;
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Carnevalee Freakshow', cursive;
+    ;
 }
 
 .card{
-    background-color: rgba(70, 70, 70, 0.582);
+    background-color: rgba(123, 114, 114, 0.582);
+    /* background-image: url('card-background.jpg'); */
     position: relative;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
-    flex-basis: 20%;
-    min-width: 70px;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px;
+    flex-basis: 25%;
+    min-width: 100px;
     text-decoration: solid;
     text-decoration-line: none;
 }
 
-.cAct {
-    background-color: rgba(70, 70, 70, 0.582);
-    border-radius: 2.5px;
-    border-width: 3px;
-    position: relative;
-    color: white;
-    border-color: white;  
-    margin-left: 5px; 
-    font-size: 1.2rem;
-    font-family: "Montserrat";
-    cursor: pointer;
+.card:hover{
+-webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+transition: 0.8s ease;
 }
 
-.container-filters {
-    width: 20%;
+.filters{
+
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     background-color: rgba(70, 70, 70, 0.582);
     color: white;
     border-color: white;
     border-radius: 2.5px;
-    border-width: 2.5px;
-    flex-direction: row;
-    margin-left: 10px;
+    border-width: 2.5px;     
+    margin-left: auto;
+    margin-right:auto;
     font-size: 1.2rem;
-    font-family: "Montserrat";
+    font-family: "Carnevalee Freakshow";
+    cursor: pointer;
+}
+
+.cAct {
+    background-color: rgba(255, 36, 36, 0.582);;
+    border-radius: 2.5px;
+    border-width: 3px;
+    position: relative;
+    color: rgb(252, 245, 245);
+    border-color: white;  
+    margin-left: 5px; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 3rem;
+    font-family: "Carnevalee Freakshow";
+    cursor: pointer;
+    flex-direction: row;
+}
+
+.containerfilters {
+    width: 15%; /* adjust as needed */
+    float:left;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    /* justify-content: center; */
+    background-color: rgba(70, 70, 70, 0.582);
+    color: white;
+    border-color: white;
+    border-radius: 2.5px;
+    border-width: 2.5px;     
+    margin-left: 70px;
+    margin-right:auto;
+    font-size: 1.5rem;
+    font-family: "Carnevalee Freakshow";
     cursor: pointer; 
 }
 
 .cards{
-    position: relative;
+    position: relative;    
     border-radius: 10px;
-    padding: 0% 8%;
+    padding: 0% 10%;
     margin: 10px;
+    width: auto;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -84,4 +132,5 @@
     align-content: flex-start;
     text-decoration: solid;
     text-decoration-line: none;
+   
 }

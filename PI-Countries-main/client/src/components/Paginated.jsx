@@ -1,13 +1,7 @@
 
-//create a new component called Paginated
-//this component will be used to render the countries in pages
-//this component will be used in Home.jsx
-
-//this component will be used to render the countries in pages
-//this component will be used in Home.jsx
 
 import React from 'react';
-import './Paginated.css';
+
 import s from '../styles/Paginated.module.css';
 
 export default function Paginated({ countriesPerPage, allCountries, paginated }) {

@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Carnevalee Freakshow';
+  src: url( './Carnevalee Freakshow.ttf');
+
+}
+
 .paginated {
     text-align: center;
     display: flex;
@@ -17,9 +23,9 @@
   .container_button button {
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
-    font-size: 20px;
+    font-size: 45px;
     font-weight: bolder;
-    font-family: "Montserrat";
+    font-family: 'Carnevalee Freakshow';
     margin: 0.15rem;
     cursor: pointer;
     border-radius: 10%;

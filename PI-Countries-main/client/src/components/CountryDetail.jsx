@@ -41,11 +41,11 @@ export default function Detail() {
                     <div className={s.div1}>
                             {details.activities?.length > 0 ? details.activities.map((a) =>
                                 <div className={s.div3}>
-                                    <h5 className={s.div3}>ACTIVITIES: </h5>
-                                    <h3>{a.name}</h3>
-                                    <h4>Difficulty: {a.difficulty}</h4>
-                                    <h4>Duration: {a.duration}</h4>
-                                    <h4>Season: {a.season}</h4>
+                                    <h5 className={s.data3}>ACTIVITIES: </h5>
+                                    <h3 className={s.data3}>{a.name}</h3>
+                                    <h4 className={s.data3}>Difficulty: {a.difficulty}</h4>
+                                    <h4 className={s.data3}>Duration: {a.duration}</h4>
+                                    <h4 className={s.data3}>Season: {a.season}</h4>
                                 </div>
                             ) : "No activities"
                             }

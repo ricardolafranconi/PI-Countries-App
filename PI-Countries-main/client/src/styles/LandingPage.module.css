@@ -1,6 +1,10 @@
+@font-face {
+  font-family: 'Carnevalee Freakshow';
+  src: url( './Carnevalee Freakshow.ttf');
 
-.landing-page{
-    background-image: url("./2097771.jpg"); 
+}
+.background{
+    background-image: url("./oldWorldMap.jpg"); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -11,23 +15,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-
+   
 }
 
-.landPage-title {
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red); 
+.title {
     background-clip: text;
-    color: transparent;
+    color: rgba(11, 11, 11, 0.8);;
     position: absolute;
-    top: 0;
+    top: 250px;
     left: 0;
     right: 0;
     margin: auto;
-    font-size: 80px;
-    font-weight: 700;
+    font-size: 85px;
+    font-weight: 100;
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Carnevalee Freakshow', cursive;
   }
 
 
@@ -35,37 +38,51 @@
  
   
   /* CSS */
-  .btn-landPage {
+  .btnlandPage {
     background-color: #fbeee0;
     border: 2px solid #422800;
     border-radius: 30px;
     box-shadow: #422800 4px 4px 0 0;
-    color: #422800;
+    color: rgba(11, 11, 11, 0.8);
     cursor: pointer;
     display: inline-block;
-    font-weight: 600;
-    font-size: 30px;
-    padding: 0 18px;
-    line-height: 50px;
+    font-weight: 300;
+    font-size: 50px;
+    padding: 0 10px;
+    line-height: 70px;
     text-align: center;
     text-decoration: none;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    font-family: 'Carnevalee Freakshow', cursive;
+    
   }
   
-  .btn-landPage {
+  .btnlandPage {
     background-color: #fff;
   }
   
-  .btn-landPage {
+  .btnlandPage {
     box-shadow: #422800 2px 2px 0 0;
     transform: translate(2px, 2px);
   }
   
   @media (min-width: 768px) {
-    .btn-landPage {
+    .btnlandPage {
       min-width: 120px;
       padding: 0 25px;
     }
   }
+
+  .btnlandPage:hover {
+    background-color: #fff;
+    border-color: transparent;
+    color: #000;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+  }
+
+  
