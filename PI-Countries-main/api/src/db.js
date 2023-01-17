@@ -48,16 +48,16 @@ const { Activity, Country } = sequelize.models;
 
 
 // Aca vendrian las relaciones
-Activity.belongsToMany(Country, {
-  through: 'activity_country',
-  foreignKey: 'activity_id',
-  otherKey: 'country_id',
+Activity.belongsToMany(Country, {  // relaciona las tablas activity y country
+  through: 'activity_country',      // a traves de la tabla activity_country, que es la que tiene las claves foraneas
+  foreignKey: 'activity_id',        // con la clave foranea activity_id, que sirve para relacionar la tabla activity con la tabla activity_country
+  otherKey: 'country_id',           // y con la clave foranea country_id, que sirve para relacionar la tabla country con la tabla activity_country
 });
 
-Country.belongsToMany(Activity, {
-  through: 'activity_country',
-  foreignKey: 'country_id',
-  otherKey: 'activity_id',
+Country.belongsToMany(Activity, { // relaciona las tablas country y activity
+  through: 'activity_country',    // a traves de la tabla activity_country, que es la que tiene las claves foraneas, que ya fue creada en la relacion anterior
+  foreignKey: 'country_id',       // con la clave foranea country_id, que sirve para relacionar la tabla country con la tabla activity_country
+  otherKey: 'activity_id',        // y con la clave foranea activity_id, que sirve para relacionar la tabla activity con la tabla activity_country
 });
   
 

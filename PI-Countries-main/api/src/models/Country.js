@@ -3,10 +3,10 @@ const { DataTypes, Op } = require('sequelize');
 const sequelize = require('../db.js');
 
 
-module.exports = (sequelize) => {
+module.exports = (sequelize) => {  // Exportamos una funcion que define el modelo
 
-sequelize.define('country', {
-    id:{
+sequelize.define('country', {       // Luego le injectamos la conexion a sequelize. que significa que va a ser un modelo de sequelize
+    id:{                            // sequelize.define recibe el nombre del modelo como primer argumento y un objeto con las columnas del modelo
     type: DataTypes.STRING,
     allowNull: true,     
     primaryKey: true,
@@ -44,52 +44,7 @@ sequelize.define('country', {
   });
 };
 
-// module.exports = (sequelize, DataTypes) => {
 
-//   const  Activity = sequelize.define('activity', {
-//       id:{
-//       type: DataTypes.INTEGER,
-//       allowNull: false,     
-//       primaryKey: true,
-//       autoIncrement: true,
-//       },
-//       name: {
-//         type: DataTypes.STRING,
-//         allowNull: false,
-//       },
-//       difficulty:{
-//         type: DataTypes.INTEGER,
-//         allowNull: false,
-//         validate: {
-//           isIn: [[1, 2, 3, 4, 5]],
-//         },
-//       },
-//       duration:{
-//         type: DataTypes.INTEGER,
-//         allowNull:false
-//       },
-//       season:{
-//         type: DataTypes.STRING,
-//         allowNull: false,
-//         validate: {
-//           isIn: [['summer', 'winter', 'autumn', 'spring']],
-//         },
-//       },
-//     });
-//   }
-
-// module.exports = (sequelize, DataTypes) => {
-//   const Country_Activity = sequelize.define('country_activity', {
-//     id:{
-//       type: DataTypes.INTEGER,
-//       allowNull: false,     
-//       primaryKey: true,
-//       autoIncrement: true,
-//     },
-//   });
-// }
-
-// module.exports = (sequelize, DataTypes) => {
 
   
 

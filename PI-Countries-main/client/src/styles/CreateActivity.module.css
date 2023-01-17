@@ -6,7 +6,7 @@
 
 .title {
     font-family: 'Carnevalee Freakshow';
-    color: #290505;
+    color: #f7f4f4;
     font-size: 60px;
     text-transform: uppercase;
     font-weight: 350;
@@ -30,6 +30,16 @@
 .display {
     font-family: 'Carnevalee Freakshow';
     display: block;
+    color: white;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+.display2{
+    font-family: 'Carnevalee Freakshow';
+    display: block;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 25px;
     margin-bottom: 4px;
     margin-top: 4px;
 }
@@ -37,7 +47,7 @@
 
 
 .formulario {
-    background-image: url("./homeBackVintage.jpg");
+    /* background-image: url("./homeBackVintage.jpg"); */
     font-family: 'Carnevalee Freakshow';
     display: flex;
     flex-direction: column;

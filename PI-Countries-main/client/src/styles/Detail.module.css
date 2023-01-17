@@ -24,6 +24,7 @@ s.container{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
     min-height: 100vh;
     position: relative;    
     display: flex;
@@ -96,9 +97,9 @@ s.container{
 
 .div3 {
     font-family: 'Carnevalee Freakshow', cursive;
-    color: rgb(249, 248, 248);
-    font-weight: 100;
-    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 200;
+    font-size: 3rem;
     font-stretch: normal;
     text-decoration: none;
     width: 100%;    
@@ -170,6 +171,21 @@ s.container{
 .data3{
     font-family: 'Carnevalee Freakshow', cursive;
     color: rgb(255, 255, 255);
+    font-weight: 200;
+    font-size: 2rem;
+    font-stretch: normal;
+    text-decoration: none;
+    margin: 0%;
+    width: 100%;    
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between
+}
+
+data4{
+    font-family: 'Carnevalee Freakshow', cursive;
+    color: rgb(248, 6, 6);
     font-weight: 200;
     font-size: 2rem;
     font-stretch: normal;

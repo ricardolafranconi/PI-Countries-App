@@ -7,7 +7,7 @@ describe('Country model', () => {
       console.error('Unable to connect to the database:', err);
     }));
   describe('Validators', () => {
-    beforeEach(() => Country.sync({ force: true }));
+    beforeEach(() => Country.sync({ force: true })); // antes de cada it, sincronizamos la base de datos. Force true hace que se sincronice el modelo con la base de datos, borrando los datos que hubiera en la misma.
     describe('name', () => {
       it('should throw an error if name is null', (done) => {
         Country.create({})

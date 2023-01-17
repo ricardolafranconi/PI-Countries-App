@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Home from './components/Home';
-import LandingPage from './components/landingPage';
+import LandingPage from './components/LandingPage';
 import { BrowserRouter, Switch, Route} from 'react-router-dom'
 import CountryDetail from './components/CountryDetail';
 import CreateActivity from './components/CreateActivity';

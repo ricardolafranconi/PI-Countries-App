@@ -4,39 +4,38 @@ import { useDispatch, useSelector } from 'react-redux';
 import {postActivity, getActivities, getCountries} from '../actions/index';
 import s from '../styles/CreateActivity.module.css';
 
-export default function ActivityCreate() {
+export default function ActivityCreate() {                                          
     const dispatch = useDispatch()
-    const countries = useSelector((state) => state.allCountries)
-    const history = useHistory();
-    const [errors, setErrors] = useState({
-        enablebutton: true,
+    const countries = useSelector((state) => state.allCountries)    //useSelector para traerme el estado de mi store
+    const history = useHistory();                                   //useHistory para poder redirigirme a otra ruta, esto funciona como un push        
+    const [errors, setErrors] = useState({                          //estado local para guardar los errores                  
+        enablebutton: true,                                         //si hay errores, el botón se deshabilita    
     }); //estado local vacío para mostrar errores
     
-    useEffect(() => {
+    useEffect(() => {                                               //useEffect para que se ejecute una vez que se renderiza el componente
         dispatch(getCountries())
     }, [dispatch]);
 
-    const [input, setInput] = useState({
+    const [input, setInput] = useState({                            //estado local para guardar los datos que voy a enviar al back
         name: "",
         difficulty: "",
         duration: "",
         season: [],
-        countries: [], //lo seteo en un array para tener la posibilidad de poner más de una
+        countries: [],                                              //lo seteo en un array para tener la posibilidad de poner más de una
     });
     
-    function validate() {
-        let errors = {};
-        if (!input.name) {
-            //input es mi estado local, si en mi estado local no existe un name
-            errors.name = "Activity name is required"; //en mi objeto errors voy a pner un string que diga "nombre requerido"
+    function validate() {                                           //función para validar los datos que voy a enviar al back
+        let errors = {};                                            //objeto vacío para guardar los errores
+        if (!input.name) {                                          //input es mi estado local, si en mi estado local no existe un name
+            errors.name = "Activity name is required";              //en mi objeto errors voy a pner un string que diga "nombre requerido"
         } else if (!input.difficulty) {
-            errors.difficulty = "Difficulty level is required";
+            errors.difficulty = "Difficulty level is required";     //si no existe un difficulty en mi estado local, voy a poner un string que diga "dificultad requerida"
         } else if (input.difficulty < 1 || input.difficulty > 5) {
             errors.difficulty = "Invalid difficulty level (1-5)";
         } else if (!input.duration) {
             errors.duration = "Duration of the activity required";
         } else if (input.duration > 120 && input.duration < 1) {
-            errors.duration = "Invalid duration (1min - 120min)";
+            errors.duration = "Invalid duration (1min - 120min)";           
         } else if (input.season.length === 0) {
             errors.season = "Season of the required activity";
         } else if (input.countries.length === 0) {
@@ -45,61 +44,64 @@ export default function ActivityCreate() {
         return errors;
     }
     // eslint-disable-next-line
-    const thereAreErrors = Object.values(errors).some((error) => error);
+    const thereAreErrors = Object.values(errors).some((error) => error);        // esta variable me va a devolver true si hay errores, y false si no hay errores
 
-    function handleChange(e) {
-        setInput({
-            ...input,
-            [e.target.name]: e.target.value
+    function handleChange(e) {                                                  //función para manejar los cambios en los inputs
+        setInput({                                                              //seteo mi estado local con los valores que voy ingresando en los inputs    
+            ...input,                                                           //spread operator para que no se pierdan los valores que ya estaban en el estado local
+            [e.target.name]: e.target.value                                     //e.target.name es el name del input, y e.target.value es el valor que estoy ingresando en el input            
         });
-        setErrors(
-            validate({
-                ...input,
-                [e.target.name]: e.target.value,
-            })
-        );
-
+        setErrors(                                                              //seteo mi estado local de errores con la función validate
+            validate({                                                          //le paso como argumento mi estado local    
+                ...input,                                                       //spread operator para que no se pierdan los valores que ya estaban en el estado local
+                [e.target.name]: e.target.value,                                //e.target.name es el name del input, y e.target.value es el valor que estoy ingresando en el input            
+            })                                                                  //la función validate me va a devolver un objeto con los errores
+        );                                                                      //si no hay errores, el objeto va a estar vacío    
+        console.log(input)                                                      //si hay errores, el objeto va a tener como keys los nombres de los inputs, y como values los errores    
     }
     // eslint-disable-next-line
-    function handleCheck(e) {
-        if (e.target.checked) {
-            setInput({
-                ...input,
-                season: e.target.value
-            })
-        }
-    }
+    // function handleCheck(e) {
+    //     if (e.target.checked) {
+    //         setInput({
+    //             ...input,
+    //             season: e.target.value
+    //         })
+    //     }
+    // }
 
     function handleSelectCountries(e) {
-        if (!input.countries.includes(e.target.value)) {
-            setInput({
-                ...input,
+        if (!input.countries.includes(e.target.value)) {                //si el array de countries no incluye el valor que estoy seleccionando
+            setInput({                                                  //entonces voy a setear mi estado local con el valor que estoy seleccionando de esta manera 
+                ...input,                               
                 countries: [...input.countries, e.target.value]
             })
         }
     }
 
-    function handleDelete(d) {
-        const newInput = {
-            ...input,
-            countries: input.countries.filter((country) => country !== d), //filtro por todo lo que no sea ese elemento
-        };
-        setInput(newInput);
-        setErrors(validate(newInput));
+    function handleDelete(d) {                                              //función para manejar el click en el botón de eliminar
+        const newInput = {                                                  //guardo en una variable el nuevo estado local  
+            ...input,                                                       //spread operator para que no se pierdan los valores que ya estaban en el estado local
+            countries: input.countries.filter((country) => country !== d),  //en el array de countries, voy a filtrar los países que sean diferentes al que estoy eliminando
+        };                                                                  //el filter me va a devolver un array con los países que no son iguales al que estoy eliminando
+        setInput(newInput);                                                 //seteo mi estado local con el nuevo estado local
+        setErrors(validate(newInput));                                      //seteo mi estado local de errores con la función validate
     }
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        setErrors(validate(input));
-        const errorCompletarFormu = validate(input);
-        if (Object.values(errorCompletarFormu).length !== 0 || !input.countries) {
-            alert("All fields must be required");
-        } else {
+    function handleSubmit(e) {                                              //función para manejar el submit del formulario
+        e.preventDefault();                                                 //prevengo el comportamiento por defecto del formulario    
+        setErrors(validate(input));                                         //seteo mi estado local de errores con la función validate
+        const errorCompletarFormu = validate(input);                        //guardo en una variable el objeto que me devuelve la función validate
+             
+        if (Object.values(errorCompletarFormu).length !== 0 || !input.countries) {      //si el objeto que me devuelve la función validate no está vacío
+            Object.values(errorCompletarFormu).forEach(error => alert(error));          //recorro el objeto y muestro los errores       
+        }
+       
+        
+        else {
             console.log(input, input.countries);
             dispatch(postActivity(input));
-            alert("Activity created");
-            //ya se creó la actividad llevame a ver si está creado - vuelve solo a home
-            history.push("/countries");
+            alert("Activity created");                                           //ya se creó la actividad llevame a ver si está creado - vuelve solo a home
+            history.push("/countries");                                         //redirecciono a la ruta /countries con useHistory
         }
     }
 
@@ -120,7 +122,9 @@ export default function ActivityCreate() {
                         onChange={(e) => handleChange(e)}
                         placeholder="Activity name"
                         required />
+                    {errors.name && <p className={s.display2}>{errors.name}</p>}
                 </div>
+
                 <div>
                     <label className={s.display}>Difficulty:</label>
                     <select
@@ -135,7 +139,7 @@ export default function ActivityCreate() {
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
-                        {errors.difficulty && <p className="error">{errors.difficulty}</p>}
+                    {errors.difficulty && <p className={s.display2}>{errors.difficulty}</p>}
                     </select>
 
                 </div>
@@ -150,7 +154,7 @@ export default function ActivityCreate() {
                         max="120"
                         onChange={e => handleChange(e)}
                     />
-                    {errors.duration && <p className="error">{errors.duration}</p>}
+                    {errors.duration && <p className={s.display2}>{errors.duration}</p>}
                 </div>
 
                 <div>
@@ -165,7 +169,7 @@ export default function ActivityCreate() {
                         <option value="Autumn">Autumn</option>
                         <option value="Winter">Winter</option>
                         <option value="Spring">Spring</option>
-                        {errors.season && <p className="error">{errors.season}</p>}
+                        {errors.season && <p className={s.display2}>{errors.season}</p>}
                     </select>
                 </div>
 
@@ -173,21 +177,22 @@ export default function ActivityCreate() {
                 <select name="countries" onChange={(e) => handleSelectCountries(e)}
                     value=""
                 >
-                    <option value={""} disable selected hidden>
+                    <option value={""}>
                         {" "}
                         --Select one or more countries--
                     </option>
                     {countries
-                        .filter((country) => (!input.countries.includes(country.id)))
-                        .sort((a, b) => a.name.localeCompare(b.name))
-                        .map((country) => (
-                            <option value={country.id}>{country.name}</option>
+                        .filter((country) => (!input.countries.includes(country.id)))                   //filtro por todo lo que no sea ese elemento
+                        .sort((a, b) => a.name.localeCompare(b.name))                                   //ordeno alfabeticamente
+                        .map((country) => (                                                             //muestro los paises
+                            <option value={country.id}>{country.name}</option>                          //value es el id del pais    
                         ))}
                 </select>
+                
                 <div>
-                    {input.countries.map(country => (
-                        <span>
-                            {countries.find((c) => c.id === country).name}
+                    {input.countries.map(country => (                                                       
+                        <span>                                                                          
+                            {countries.find((c) => c.id === country).name}                              
                             <button type="button" onClick={() => handleDelete(country)}>x</button>
                         </span>
                     ))}

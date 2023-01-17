@@ -36,18 +36,19 @@ export default function Detail() {
                         <h5 className={s.data1}>SUBREGION: {details.subregion}</h5>
                         <h5 className={s.data1}>AREA: {details.area} km2</h5>
                         <h5 className={s.data1}>POPULATION: {details.population}</h5>
+                        <h5 className={s.data3}>ACTIVITIES: </h5>
                     </div>
 
                     <div className={s.div1}>
                             {details.activities?.length > 0 ? details.activities.map((a) =>
                                 <div className={s.div3}>
-                                    <h5 className={s.data3}>ACTIVITIES: </h5>
-                                    <h3 className={s.data3}>{a.name}</h3>
+                                    
+                                    <h3 className={s.data4}>{a.name}</h3>
                                     <h4 className={s.data3}>Difficulty: {a.difficulty}</h4>
                                     <h4 className={s.data3}>Duration: {a.duration}</h4>
                                     <h4 className={s.data3}>Season: {a.season}</h4>
                                 </div>
-                            ) : "No activities"
+                            ) : <h5 className={s.data3}>No activities</h5>
                             }
                         <Link to='/countries'>
                             <button className={s.btn2}>Go home</button>
